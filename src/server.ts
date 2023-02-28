@@ -1,5 +1,6 @@
 import path from "path";
 
+import mainRoutes from "@routes/index";
 import express from "express";
 import mustache from "mustache-express";
 
@@ -16,6 +17,11 @@ app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.json());
 
 // Routes
+app.use(mainRoutes);
+
+app.use((req, res) => {
+  res.status(404).send("404 - Not Found");
+});
 
 app.listen(process.env.PORT, () =>
   console.log(`Server is running on port ${process.env.PORT}`),
