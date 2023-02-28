@@ -101,6 +101,13 @@
     "moduleResolution": "node",
     "rootDir": "./src",
     "outDir": "./dist" /* Skip type checking .d.ts files that are included with TypeScript. */,
+    "baseUrl": ".",
+    "paths": {
+      "@routes/*": ["src/routes/*"],
+      "@views/*": ["src/views/*"],
+      "@controllers/*": ["src/controllers/*"],
+      "@models/*": ["src/models/*"]
+    },
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   }
 }
