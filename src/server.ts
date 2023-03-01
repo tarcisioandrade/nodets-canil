@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(mainRoutes);
 
 app.use((req, res) => {
-  res.status(404).send("404 - Not Found");
+  res.render("pages/404");
 });
 
 app.listen(process.env.PORT, () =>
